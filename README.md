@@ -254,6 +254,16 @@ The unifying principle of the collection is simple:
 
 ---
 
+## Copyright, licensing, and AI-assistance disclosure
+
+© 2026 **Alejandro Reynoso**. All rights reserved with respect to the monographs, papers, explanatory texts, pedagogical materials, editorial content, visual materials, and other authored works contained in this repository. These materials may not be reproduced, distributed, shared, adapted, republished, or otherwise made available, in whole or in part, without the author’s prior written authorization. Commercial use is strictly prohibited. Any reproduction or sharing—whether in print, digital, educational, or any other form—requires the author’s express prior approval.
+
+The presence of an MIT License in this repository does not constitute a blanket license for the papers, monographs, editorial content, or other non-software materials. The MIT License applies only to software code or other files that are expressly identified as being released under that license. To the extent that a particular code file is covered by the MIT License, its use remains governed by that license; all other materials remain subject to the copyright and use restrictions stated above.
+
+Artificial-intelligence systems may have been used as research, drafting, editing, analytical, formatting, or coding tools in the preparation of portions of this collection. Such assistance does not transfer authorship, intellectual direction, or editorial accountability. **Alejandro Reynoso retains full editorial responsibility for the collection, including its arguments, interpretations, selection and organization of material, conclusions, and publication. The conceptual framework, research agenda, pedagogical direction, substantive guidance, and final approval of all materials are those of the author.**
+
+---
+
 **Alejandro Reynoso**  
 Judge Business School · University of Cambridge  
 [Teaching and research projects](https://alexdibol.github.io)
