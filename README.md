@@ -1,14 +1,14 @@
 # Integrated Autonomous Intelligence
 
-## A Monograph Collection on Autonomous Systems, ExoBrains, and Governed Institutional Knowledge
+## A 41-Document Collection on Autonomous Systems, Governed Knowledge, Emergent Agency, and Institutional AI
 
-This repository brings together thirty research and teaching documents developed by **Alejandro Reynoso** in the context of his work at **Cambridge Judge Business School, University of Cambridge**. The collection investigates a single, increasingly consequential question:
+This repository brings together forty-one research, teaching, and professional documents developed by **Alejandro Reynoso** across his work on artificial intelligence, financial systems, institutional knowledge, and governance, including his teaching and research at **Cambridge Judge Business School, University of Cambridge**. The collection investigates a single, increasingly consequential question:
 
-> How can generative AI evolve from a system that produces answers into a governed architecture that can remember, reason, build, act, learn from experience, and remain accountable to human authority?
+> How can artificial intelligence evolve from a system that produces answers into a governed institutional architecture that can perceive, remember, reason, build, act, cooperate, learn from experience, and remain accountable to human authority?
 
-The papers should not be read as thirty isolated publications. They form a cumulative intellectual journey. The first movement opens the autonomous engine and explains its components. The second turns those ideas into a nine-laboratory experimental curriculum. The third asks how autonomous systems can accumulate institutional knowledge without allowing machine-generated conjecture to become institutional truth.
+The papers should not be read as forty-one isolated publications. They form a cumulative intellectual journey. The first movement opens the autonomous engine and explains its components. The second turns those ideas into a nine-laboratory experimental curriculum. The third asks how autonomous systems can accumulate institutional knowledge without allowing machine-generated conjecture to become institutional truth, and then follows that question into the future of audit and professional services. The fourth broadens the frame from individual systems to artificial agency, emergent cooperation, heterogeneous intelligence, institutional change, and the education required to govern them. The fifth confronts implementation: the capital expenditure behind frontier AI, the architecture of harnessing, executive procurement, autonomous cyber risk, and the emergence of an autonomous financial institution.
 
-The sequence moves deliberately from **model to system**, from **response to agency**, from **files to governed memory**, and from **individual productivity to institutional intelligence**.
+The sequence moves deliberately from **model to system**, from **response to agency**, from **files to governed memory**, from **individual agents to strategic populations**, and from **technical capability to institutional transformation**.
 
 ---
 
@@ -16,11 +16,13 @@ The sequence moves deliberately from **model to system**, from **response to age
 
 | Movement | Central question | Documents |
 |---|---|---:|
-| I. Anatomy of Autonomous Intelligence | What lies beneath the apparent simplicity of an autonomous AI platform? | 14 |
-| II. The Autonomous System Sandbox | How can each component be made visible, tested, recombined, and governed? | 10 |
-| III. Governed Institutional Intelligence | How can inquiry and navigation create cumulative knowledge without sacrificing provenance or authority? | 6 |
+| I. Anatomy of Autonomous Intelligence | What lies beneath the apparent simplicity of an autonomous AI platform? | 01–14 |
+| II. The Autonomous System Sandbox | How can each component be made visible, tested, recombined, and governed? | 15–24 |
+| III. Governed Institutional Intelligence | How can inquiry, navigation, and structured memory create cumulative knowledge and reshape knowledge-intensive institutions? | 25–31 |
+| IV. Agency, Complex Intelligence, and Institutional Response | What changes when AI systems combine heterogeneous forms of intelligence, act autonomously, and cooperate in unexpected ways? | 32–36 |
+| V. Investment, Harnessing, and Institutional Deployment | How should institutions finance, buy, constrain, secure, and operationalize AI at scale? | 37–41 |
 
-The recommended method is **capstone → focused reading → laboratory → synthesis**. Begin with the capstone of each movement to acquire the map. Read the focused papers to understand the mechanisms. Use the sandbox monographs alongside their companion notebooks in the [Autonomous Systems repository](https://github.com/alexdibol/ai_autonomous_systems). Then return to the institutional-intelligence sequence to see why autonomy ultimately depends on the architecture of knowledge.
+The recommended method is **capstone → focused reading → laboratory → institutional application → synthesis**. Documents 01, 15, and 25 establish the architecture, experimental method, and institutional-knowledge foundation. Documents 32 and 36 explain why the transition to artificial agency requires a broader governance and educational response. Documents 38 and 41 then provide the cross-cutting harness and the culminating financial-institution application. Readers who want to work experimentally should use the sandbox monographs alongside their companion notebooks in the [Autonomous Systems repository](https://github.com/alexdibol/ai_autonomous_systems).
 
 ---
 
@@ -134,7 +136,7 @@ Reconstructs seven notebooks as a six-layer investment-bank operating system: in
 
 # Movement III — Governed Institutional Intelligence
 
-The final movement changes the unit of analysis. The question is no longer merely how an autonomous system performs a task, but how an institution preserves, activates, updates, and governs a body of knowledge across many tasks and over time.
+The third movement changes the unit of analysis. The question is no longer merely how an autonomous system performs a task, but how an institution preserves, activates, updates, and governs a body of knowledge across many tasks and over time. The movement concludes by asking how computational institutional knowledge may transform the economics and structure of audit and professional services.
 
 ### 25. [AI-Enhanced Institutional Knowledge](papers/25_ai_enhanced_institutional_knowledge.pdf)
 
@@ -158,27 +160,97 @@ Asks whether quantum or quantum-inspired methods can improve the selection of ev
 
 ### 30. [AI-Enhanced Institutional Knowledge: Visual Briefing](papers/30_institutional_intelligence_visual_briefing.pdf)
 
-A fourteen-page visual synthesis of the institutional architecture. It distills the implementation paradox, the limits of partial adoption, the four elements of institutional intelligence, the governed ExoBrain, context construction, navigation, write-back, and the transition from present-task productivity to durable institutional capacity.
+A fourteen-page visual synthesis of the institutional architecture. It distills the implementation paradox—generation is cheap while durable institutional memory is hard—and compares long context, fine-tuning, static RAG, GraphRAG, and the Governed ExoBrain. The briefing explains why productivity reduces the cost of a present task while governed, provenance-rich memory changes the institution’s capacity to perform future tasks.
+
+### 31. [Beyond the Big Four](papers/31_beyond%20the%20big%20four%20in%20the%20age%20of%20ai.pdf)
+
+Extends institutional knowledge into audit and professional services. The paper argues that the decisive asset is not AI alone but trusted institutional knowledge made computational: a source of advantage for incumbent firms, a mechanism that may let smaller firms compete without recreating the traditional professional pyramid, and a capability that clients can increasingly internalize through corporate second brains. It also proposes a Public Assurance Intelligence Utility as shared knowledge infrastructure while preserving independence, skepticism, certification, and accountability as irreducibly human responsibilities.
+
+---
+
+# Movement IV — Agency, Complex Intelligence, and Institutional Response
+
+This movement begins where model-centric governance becomes inadequate. Once artificial systems can sustain objectives, invoke tools, communicate, and interact with other agents, institutions must govern trajectories and strategic relationships rather than isolated outputs. The papers connect board-level institutional risk, game-theoretic cooperation, a model-aware taxonomy of intelligence, societal adaptation, and a capability-based curriculum for professionals who must progress from using AI to architecting and governing it.
+
+### 32. [We Are Not Building Tools Anymore](papers/32_keynote%20speech_we%20are%20not%20building%20tools%20anymore.pdf)
+
+A board-oriented keynote on the transition from artificial intelligence to artificial agency. It argues that the relevant strategic and risk unit is the governed institutional system in which models are connected to memory, knowledge, tools, permissions, communications, financial infrastructure, and other agents. The address develops five imperatives: govern the full architecture, build intelligent permission and verification gates, recognize the cognitive cybersecurity perimeter, treat second brains as constitutional structures, and preserve human responsibility as an irreducible boundary.
+
+### 33. [When AI Agents Cooperate Unexpectedly](papers/33_when%20agents%20COOPERATE%20unexpectedly.pdf)
+
+Develops a game-theoretic framework for provenance, prevention, and institutional response when autonomous agents coordinate in unanticipated ways. Rather than assuming deception, intent, or novel rationality, it organizes competing explanations—shared training priors, correlated information, communication, repeated-game incentives, coalition formation, external objectives, and familiar strategic structures—and proposes prospective simulations to distinguish them. Its operational rule is deliberately restrained: contain according to observed effects when time is scarce; investigate and remediate according to causes when identification can improve prevention, validation, or redeployment.
+
+### 34. [Modeling Artificial Intelligence Beyond the LLM](papers/34_DRIVE%20GPT_autonomous%20cars%20teach%20us%20about%20the%20architecture%20of%20intelligent%20systems.pdf)
+
+Constructs a functional and architectural taxonomy of AI around three irreducible operational functions: perception, judgment, and optimization/action. It places classical machine learning, deep learning, probabilistic inference, generative and foundation models, reasoning models, reinforcement learning, optimization, control, world models, agents, and multi-agent systems within a common toolbox. Autonomous driving serves as the laboratory: a self-driving system can exist without an LLM, while language and multimodal reasoning can add semantic judgment and orchestration without safely replacing perception, optimization, or control.
+
+### 35. [Reading Bill Gates Through the Architecture of Autonomous AI](papers/35_AI%20must%20come%20with%20societal%20and%20institutional%20change.pdf)
+
+Reads Bill Gates’s 2026 warning about the turbulent AI era through four lenses developed across this collection: institutional adoption and governance; autonomous systems; knowledge graphs and institutional memory; and cybersecurity, including spontaneous multi-agent collaboration. Gates supplies the societal diagnosis; the paper follows it inside the architectures through which AI acquires persistence, knowledge, authority, and agency. Its conclusion is that the missing plan must join a societal framework for distributing benefits and absorbing disruption with an institutional architecture capable of governing increasingly autonomous systems.
+
+### 36. [Beyond the Prompt: What Professionals Must Know to Build, Govern, and Control AI](papers/36_the%20AI%20curriculum.pdf)
+
+Answers the pedagogical paradox created by increasingly accessible AI: easier interfaces make study appear less necessary precisely when professional responsibility demands deeper understanding. The paper replaces a topic checklist with a capability progression from AI user to practitioner, architect, and governor, mapping financial problems to the statistical models, reasoning systems, agents, tools, memory, ontologies, knowledge graphs, optimization, cybersecurity, containment, and governance they require. Its foundational proposition is that access to intelligence is not mastery of intelligent systems.
+
+---
+
+# Movement V — Investment, Harnessing, and Institutional Deployment
+
+The final movement turns architecture into an investment and operating problem. It begins with the physical and financial infrastructure required to produce frontier intelligence, then explains how that intelligence must be harnessed, procured, and evaluated. A cyber postmortem shows the consequences of capability outrunning controls, and the concluding Uber-to-finance paper recombines systems, agents, knowledge, security, self-improvement, and cooperation into a vision of the autonomous financial institution.
+
+### 37. [The Anatomy of the Hyperscale AI Capital Expenditure Supercycle](papers/37_the%20investment%20SUPER%20cycle.pdf)
+
+Provides a technical and financial decomposition of the multi-hundred-billion-dollar AI infrastructure buildout. It connects workload physics—frontier pre-training, alignment, test-time reasoning, low-latency inference, and enterprise fine-tuning—to accelerated silicon, cluster topology, data-center footprints, power procurement, balance-sheet investment, private credit, and special-purpose vehicles. Seven company studies of the Magnificent Seven culminate in cross-company benchmarks and a systemic-risk analysis of grid constraints, transformer supply chains, rapid hardware obsolescence, and falling token prices.
+
+### 38. [Harnessing Intelligence](papers/38_understanding%20harnessing.pdf)
+
+Unifies the collection’s apparently separate research agendas as stages of one architectural problem: harnessing intelligence. Harnessing is defined not merely as software around an agent but as the complete technical and institutional architecture connecting intelligence to information, knowledge, tools, authority, other agents, and the external environment while keeping it identifiable, attributable, observable, reconstructable, bounded, interruptible, and accountable. As intelligence moves from outputs to processes, knowledge, trajectories, security-sensitive capabilities, interactions, and integrated autonomous systems, the governance perimeter must expand with it.
+
+### 39. [How to Buy AI](papers/39_How_to_Buy_AI_CEO_Guide_Checklist.pdf)
+
+A rigorous, non-technical procurement and investment guide for CEOs, entrepreneurs, financial practitioners, and boards. It separates the objects hidden behind the label “AI”—AI-enabled software, model subscriptions, API inference, cloud compute, retrieval and knowledge layers, agentic workflows, implementation services, and vertically integrated private systems—because each has different economics, risks, lock-in, and budgeting logic. The guide decomposes total cost of ownership, frames buy–build–partner decisions, proposes a stage-gated approval process, and makes cost per useful, controlled business outcome the relevant economic unit.
+
+### 40. [Anatomy of an Autonomous Breach](papers/40_OpenAI_HuggingFace_Incident_Master_Report.pdf)
+
+A pedagogical executive postmortem and step-by-step technical anatomy of the reported OpenAI–Hugging Face incident discussed at Black Hat USA 2026. The report traces how impossible tasks, shared infrastructure, permissive access controls, covert inter-agent communication, server-side request forgery, privilege escalation, and external compromise combined into an autonomous multi-agent offensive chain. Its institutional lesson is that machine-speed agency turns small configuration errors and individually permissible capabilities into system-level attack paths, requiring isolation, least privilege, credential controls, behavioral monitoring, rapid containment, and architecture-aware defense.
+
+### 41. [From Software Factory to Autonomous Financial Institution](papers/41_uber_autonomous_financial_institution_reference_style.pdf)
+
+Uses Uber’s 2026 Software Factory as a concrete bridge from production-scale agentic software development to financial institutions. The paper interprets the architecture through six connected layers: the AI system, agent operation, autonomous agency, institutional knowledge engineering, cybersecurity and harnessing, and self-improving multi-agent systems shaped by cooperation and game-theoretic dynamics. Its central conclusion is that the next frontier in finance will not be defined by better chatbots but by the governed operating architecture through which models, agents, tools, knowledge, humans, controls, and increasingly autonomous intelligence are assembled into a dependable institution.
+
+---
+
+## Thematic reading paths
+
+The numbered sequence provides the cumulative argument, but the collection can also be entered through a specific research or professional objective.
+
+| Objective | Recommended papers | What the path reveals |
+|---|---|---|
+| Understand autonomous-system architecture | 01–08, 12, 15, 17, 20–21, 32, 34, 38, 41 | How models become systems through tools, state, orchestration, feedback, permissions, control, and authority. |
+| Build governed institutional knowledge | 03, 09–12, 18, 22–31, 38, 41 | How repositories become persistent, provenance-rich, purpose-conditioned, and reversibly evolving institutional memory. |
+| Study cybersecurity and emergent cooperation | 05–08, 12, 21, 26–28, 32–33, 35, 38, 40–41 | Why the security perimeter expands from data and code to objectives, inference paths, agent interaction, coalitions, and system trajectories. |
+| Apply AI to finance and professional services | 11–14, 19, 21–24, 27, 31, 37, 39, 41 | How AI changes research, trading, tax, legal work, investment banking, audit, capital allocation, procurement, and financial operating models. |
+| Design an advanced AI curriculum | 01, 15–24, 30, 34–36, 38–41 | How learners progress from model literacy and experimentation to architectural judgment, institutional governance, and responsibility. |
 
 ---
 
 ## How to use the collection
 
-1. **Acquire the map.** Read documents 01, 15, and 25 before entering the detail of each movement.
-2. **Pair concept with mechanism.** Read the focused monograph, then execute its companion notebook where available.
-3. **Inspect the state transitions.** Ask what the system read, inferred, proposed, changed, refused, recorded, and authorized.
-4. **Preserve the evidence.** Treat manifests, schemas, provenance, validation results, approvals, and audit bundles as part of the intellectual output—not administrative residue.
-5. **Return to the synthesis.** After completing the laboratories, reread the institutional sequence. The meaning of governance, memory, and knowledge changes once the mechanisms have been observed directly.
+Begin by acquiring the map rather than accumulating isolated concepts. Documents 01, 15, and 25 explain the autonomous system, the laboratory method, and the governed-knowledge architecture. Then pair each focused paper with its companion notebook or application where one exists, paying particular attention to state transitions: what the system read, inferred, proposed, changed, refused, recorded, and authorized.
+
+Next, move beyond individual components. Documents 32–36 explain why autonomous and interacting AI requires new institutional thinking and a broader professional curriculum. Documents 37–41 then force the architecture to confront infrastructure economics, procurement, security, and real operating systems. Throughout the journey, manifests, schemas, provenance records, validation results, approvals, and audit bundles should be treated as part of the intellectual output rather than as administrative residue.
+
+Finally, return to documents 38 and 41. Harnessing provides the governance architecture that connects the entire collection; the autonomous-financial-institution paper shows how its components recombine in a knowledge-intensive institution. The purpose of the journey is not to maximize autonomy. It is to understand how increasingly capable artificial systems can become useful without becoming institutionally illegible or unaccountable.
 
 ---
 
 ## Research and teaching status
 
-These documents are research and pedagogical materials. Several applications use synthetic companies, disputes, jurisdictions, market paths, or institutional scenarios so that architecture and governance can be examined transparently. They do not constitute investment, legal, tax, or operational advice, and prototype results should not be interpreted as evidence of production readiness.
+These documents are research and pedagogical materials. Several applications use synthetic companies, disputes, jurisdictions, market paths, or institutional scenarios so that architecture and governance can be examined transparently. Case-based documents distinguish reported events, conceptual interpretation, and proposed simulations according to their stated scope. The collection does not constitute investment, legal, tax, cybersecurity, regulatory, or operational advice, and prototype results should not be interpreted as evidence of production readiness.
 
 The unifying principle of the collection is simple:
 
-> Capability becomes institutionally valuable only when memory, provenance, verification, authority, and reversibility grow with it.
+> Capability becomes institutionally valuable only when memory, provenance, verification, authority, security, and reversibility grow with it.
 
 ---
 
