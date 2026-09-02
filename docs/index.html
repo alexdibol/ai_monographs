@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Forty-one public monographs that make artificial intelligence understandable, business-relevant, and institutionally useful—without requiring coding or mathematics.">
+  <meta name="author" content="Alejandro Reynoso">
+  <meta name="theme-color" content="#071d35">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AI Monographs | Artificial Intelligence, Made Understandable">
+  <meta property="og:description" content="A public, pedagogical journey through AI systems, autonomous agents, institutional knowledge, governance, cybersecurity, and finance.">
+  <meta property="og:url" content="https://alexdibol.github.io/ai_monographs/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AI Monographs | Alejandro Reynoso">
+  <meta name="twitter:description" content="41 monographs · 5 learning movements · No coding or mathematical background required.">
+  <title>AI Monographs | Artificial Intelligence, Made Understandable</title>
+
+  <style>
+    :root{
+      --ink:#152231;
+      --navy:#071d35;
+      --deep:#041426;
+      --paper:#f7f5ef;
+      --white:#fff;
+      --gold:#c9a34c;
+      --gold-dark:#876720;
+      --gold-soft:#ead9a4;
+      --mist:#edf2f5;
+      --muted:#5d6d7c;
+      --line:#d9d5ca;
+      --max:1240px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:86px}
+    body{
+      margin:0;
+      background:var(--paper);
+      color:var(--ink);
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      font-size:16px;
+      line-height:1.68;
+    }
+    a{color:inherit;text-decoration:none}
+    a{transition:color .2s,background .2s,border-color .2s,transform .2s}
+    a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+    .page{width:min(var(--max),calc(100% - 48px));margin:auto}
+    h1,h2,h3,.serif{font-family:Georgia,"Times New Roman",serif;font-weight:500;line-height:1.05}
+    .skip-link{position:absolute;left:-9999px;top:auto}
+    .skip-link:focus{left:18px;top:18px;z-index:100;background:var(--gold);color:var(--deep);padding:12px 16px;font-weight:800}
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:var(--deep);
+      color:white;
+      border-bottom:1px solid rgba(255,255,255,.12);
+    }
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:13px;font-size:.78rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}
+    .brand-mark{width:39px;height:39px;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold);font-family:Georgia,serif;font-size:1.08rem}
+    .nav-links{display:flex;align-items:center;gap:26px;font-size:.82rem;font-weight:700}
+    .nav-links a:hover{color:var(--gold)}
+
+    .hero{background:var(--navy);color:white;overflow:hidden}
+    .hero-grid{min-height:720px;display:grid;grid-template-columns:1.4fr .76fr;gap:78px;align-items:center;padding:96px 0 84px}
+    .eyebrow,.kicker{margin:0 0 20px;color:var(--gold);font-size:.76rem;font-weight:850;letter-spacing:.18em;text-transform:uppercase}
+    .hero h1{font-size:clamp(3.6rem,7.1vw,7.2rem);letter-spacing:-.055em;margin:0;max-width:920px}
+    .hero h1 em{color:var(--gold);font-style:normal}
+    .hero-lead{font-family:Georgia,serif;font-size:clamp(1.3rem,2vw,1.86rem);line-height:1.36;max-width:850px;color:#e6edf2;margin:30px 0 16px}
+    .hero-body{max-width:780px;color:#bac8d3;font-size:1.03rem}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+    .button{display:inline-flex;gap:18px;align-items:center;justify-content:center;padding:15px 21px;border:1px solid transparent;font-size:.82rem;font-weight:800;letter-spacing:.02em}
+    .button.primary{background:var(--gold);color:var(--navy)}
+    .button.secondary{border-color:rgba(255,255,255,.36);color:white}
+    .button:hover{transform:translateY(-2px)}
+    .button.primary:hover{background:var(--gold-soft)}
+    .button.secondary:hover{border-color:var(--gold);color:var(--gold-soft)}
+    .hero-panel{position:relative;background:var(--paper);color:var(--ink);padding:42px 34px 34px;min-height:440px;box-shadow:24px 24px 0 rgba(0,0,0,.16)}
+    .hero-panel:before{content:"AI";position:absolute;right:20px;top:11px;font-family:Georgia,serif;font-size:7rem;color:rgba(201,163,76,.12);line-height:1}
+    .panel-kicker{color:var(--gold-dark);text-transform:uppercase;font-size:.7rem;letter-spacing:.14em;font-weight:850}
+    .hero-panel h2{font-size:2.42rem;margin:38px 0 32px}
+    .stats{border-top:1px solid var(--line)}
+    .stats div{display:flex;align-items:center;gap:18px;padding:14px 0;border-bottom:1px solid var(--line)}
+    .stats strong{font:500 2rem Georgia;color:var(--gold-dark);min-width:54px}
+    .stats span{font-size:.82rem;font-weight:750}
+    .hero-index{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid rgba(255,255,255,.16)}
+    .hero-index a{padding:21px 14px;border-right:1px solid rgba(255,255,255,.16);font-size:.72rem;color:#cad7e0}
+    .hero-index a:hover{background:rgba(255,255,255,.04);color:white}
+    .hero-index span{display:block;color:var(--gold);font-weight:900;margin-bottom:5px}
+
+    .section{padding:108px 0}
+    .split{display:grid;grid-template-columns:1.05fr .95fr;gap:80px;align-items:start}
+    .section h2,.journey h2,.library h2{font-size:clamp(2.75rem,5vw,5.2rem);letter-spacing:-.045em;margin:0}
+    .intro{font-size:1.16rem;color:#33465a;margin:5px 0 0}
+    .principles{display:grid;grid-template-columns:repeat(4,1fr);margin-top:70px;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+    .principles article{padding:30px 24px 34px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .number{color:var(--gold-dark);font-size:.75rem;font-weight:900}
+    .principles h3{font-size:1.55rem;margin:42px 0 14px}
+    .principles p{font-size:.92rem;color:var(--muted);margin:0}
+
+    .journey{background:var(--deep);color:white;padding:108px 0}
+    .journey-head{display:grid;grid-template-columns:1fr .72fr;gap:80px;margin-bottom:60px}
+    .journey-head>p{color:#b9c7d2;font-size:1.08rem}
+    .stages{display:grid;gap:14px}
+    .stage{display:grid;grid-template-columns:104px 1.08fr .92fr 42px;background:#f6f3ea;color:var(--ink);min-height:168px;transition:.2s}
+    .stage:hover{transform:translateX(7px);background:white}
+    .stage-no{background:var(--gold);color:var(--navy);padding:28px 20px;font:500 2.1rem Georgia}
+    .stage-main,.stage-outcome{padding:25px 30px}
+    .stage-label{text-transform:uppercase;letter-spacing:.12em;color:var(--gold-dark);font-size:.68rem;font-weight:900}
+    .stage h3{font-size:1.78rem;margin:8px 0}
+    .stage-main p,.stage-outcome p{margin:0;color:#485a6c;font-size:.88rem}
+    .stage-outcome{border-left:1px solid var(--line)}
+    .stage-outcome strong{font-size:.72rem;text-transform:uppercase;letter-spacing:.09em}
+    .arrow{display:grid;place-items:center;font-size:1.35rem;color:var(--gold-dark)}
+
+    .paths{background:var(--mist)}
+    .path-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:58px}
+    .path{background:white;padding:38px;min-height:300px;display:flex;flex-direction:column;align-items:flex-start;border-top:4px solid transparent}
+    .path:hover{border-top-color:var(--gold)}
+    .path.dark{background:var(--navy);color:white}
+    .path .tag{color:var(--gold-dark);text-transform:uppercase;letter-spacing:.13em;font-size:.7rem;font-weight:900}
+    .path.dark .tag{color:var(--gold)}
+    .path h3{font-size:2.15rem;margin:22px 0 14px}
+    .path p{color:var(--muted);margin:0 0 24px}
+    .path.dark p{color:#b9c7d2}
+    .path a{margin-top:auto;border-bottom:1px solid var(--gold);font-size:.76rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase}
+    .path.featured{grid-column:1/-1;display:grid;grid-template-columns:.7fr 1.3fr;gap:56px;min-height:0}
+    .path.featured h3{margin-top:0}
+
+    .gateway{background:var(--navy);color:white}
+    .gateway-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:90px;align-items:start}
+    .gateway blockquote{font:500 1.56rem/1.48 Georgia;margin:0;padding-left:30px;border-left:2px solid white}
+    .gateway-list{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px}
+    .gateway-item{border-top:1px solid rgba(255,255,255,.48);padding-top:15px}
+    .gateway-item strong{display:block;font-size:.88rem;margin-bottom:7px}
+    .gateway-item span{font-size:.84rem;color:var(--gold-soft)}
+
+    .library{padding:108px 0;background:var(--paper)}
+    .movement{margin-top:84px;scroll-margin-top:100px}
+    .movement-head{display:grid;grid-template-columns:145px 1fr;gap:30px;align-items:start;padding-bottom:24px;border-bottom:1px solid var(--line)}
+    .movement-head span{color:var(--gold-dark);font-size:.74rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+    .movement-head h3{font-size:2.35rem;margin:0 0 10px}
+    .movement-head p{max-width:930px;color:var(--muted);margin:0}
+    .paper-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+    .paper-card{background:white;border:1px solid var(--line);padding:27px;min-height:290px;display:flex;flex-direction:column;align-items:flex-start;transition:.2s}
+    .paper-card:hover{transform:translateY(-3px);border-color:var(--gold)}
+    .paper-card .paper-no{font:500 1.65rem Georgia;color:var(--gold-dark)}
+    .paper-card .paper-kind{display:block;margin-top:25px;color:var(--gold-dark);font-size:.67rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+    .paper-card h4{font:500 1.4rem/1.14 Georgia;margin:7px 0 11px}
+    .paper-card p{font-size:.87rem;color:var(--muted);margin:0 0 22px}
+    .paper-card a{margin-top:auto;font-size:.72rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase;color:var(--navy);border-bottom:1px solid var(--gold)}
+    .paper-card a:hover{color:var(--gold-dark)}
+
+    .author{background:var(--navy);color:white}
+    .author-grid{display:grid;grid-template-columns:220px 1fr;gap:75px;align-items:center}
+    .author-mark{width:200px;height:200px;border:1px solid rgba(255,255,255,.35);display:grid;place-items:center;position:relative}
+    .author-mark:after{content:"";position:absolute;width:130px;height:130px;border:1px solid var(--gold);border-radius:50%}
+    .author-mark span{font:500 3rem Georgia;z-index:1}
+    .author h2{font-size:clamp(2.8rem,5vw,5rem);margin:0 0 24px}
+    .author p{color:#b9c7d2;max-width:880px;font-size:1.03rem}
+    .author .disclosure{margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.2);font-size:.86rem;color:var(--gold-soft)}
+
+    .footer{background:var(--deep);color:#91a3b2;padding:40px 0;font-size:.79rem}
+    .footer-grid{display:grid;grid-template-columns:1fr auto;gap:30px}
+    .footer strong{color:white}
+    .footer a{color:white;margin-left:22px}
+    .footer a:hover{color:var(--gold)}
+
+    @media(max-width:1000px){
+      .paper-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:900px){
+      .nav-links{display:none}
+      .hero-grid,.split,.journey-head,.gateway-grid,.author-grid,.path.featured{grid-template-columns:1fr}
+      .hero-grid{padding:70px 0;gap:45px}
+      .hero-index{grid-template-columns:1fr 1fr}
+      .principles{grid-template-columns:1fr 1fr}
+      .stage{grid-template-columns:68px 1fr 34px}
+      .stage-outcome{display:none}
+      .path-grid{grid-template-columns:1fr}
+      .path.featured{grid-column:auto;gap:20px}
+      .author-mark{width:150px;height:150px}
+      .gateway-list{grid-template-columns:1fr}
+    }
+    @media(max-width:650px){
+      .paper-grid{grid-template-columns:1fr}
+      .movement-head{grid-template-columns:1fr;gap:8px}
+    }
+    @media(max-width:560px){
+      .page{width:min(100% - 28px,var(--max))}
+      .hero h1{font-size:3.25rem}
+      .hero-index,.principles{grid-template-columns:1fr}
+      .section,.journey,.library{padding:76px 0}
+      .stage{grid-template-columns:52px 1fr 28px}
+      .stage-no{padding:22px 10px;font-size:1.35rem}
+      .stage-main{padding:20px}
+      .path{padding:30px;min-height:0}
+      .paper-card{min-height:0}
+      .footer-grid{grid-template-columns:1fr}
+      .footer a{margin:0 16px 0 0}
+    }
+    @media(prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *,*:before,*:after{transition:none!important}
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <header class="topbar">
+    <nav class="page nav" aria-label="Primary navigation">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">AR</span>
+        <span>AI Monographs · Public Learning</span>
+      </a>
+      <div class="nav-links">
+        <a href="#promise">Why</a>
+        <a href="#journey">Journey</a>
+        <a href="#start">Start Here</a>
+        <a href="#library">All Monographs</a>
+        <a href="#about">About</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="content">
+    <section class="hero" id="top">
+      <div class="page hero-grid">
+        <div>
+          <p class="eyebrow">41 Monographs · 5 Learning Movements · One Public Collection</p>
+          <h1>Artificial Intelligence, Made <em>Understandable</em></h1>
+          <p class="hero-lead">A guided journey for people who want to understand what AI is becoming—and what it means for business, finance, institutions, and society.</p>
+          <p class="hero-body">You do not need to code. You do not need a mathematical background. The collection begins with familiar questions and builds, step by step, toward autonomous systems, institutional memory, cybersecurity, and the future of intelligent organizations. The purpose is not to turn every reader into an engineer. It is to give every serious reader the language and judgment to participate in the decisions AI is already changing.</p>
+          <div class="actions">
+            <a class="button primary" href="#start">Choose your starting point ↓</a>
+            <a class="button secondary" href="#library">Explore all 41 monographs ↓</a>
+            <a class="button secondary" href="https://github.com/alexdibol/ai_monographs" target="_blank" rel="noopener">Open the repository ↗</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="Collection summary">
+          <p class="panel-kicker">The promise of the collection</p>
+          <h2>See beyond the chatbot.<br>Understand the system.<br>Decide with confidence.</h2>
+          <div class="stats">
+            <div><strong>41</strong><span>Public research and teaching documents</span></div>
+            <div><strong>5</strong><span>Progressive learning movements</span></div>
+            <div><strong>0</strong><span>Coding prerequisites</span></div>
+            <div><strong>1</strong><span>Integrated view of AI and institutions</span></div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="page hero-index" aria-label="Collection movements">
+        <a href="#movement-1"><span>01</span>Understand the system</a>
+        <a href="#movement-2"><span>02</span>See it in action</a>
+        <a href="#movement-3"><span>03</span>Build institutional knowledge</a>
+        <a href="#movement-4"><span>04</span>Govern intelligence</a>
+        <a href="#movement-5"><span>05</span>Put AI to work</a>
+      </div>
+    </section>
+
+    <section class="section page" id="promise">
+      <div class="split">
+        <div>
+          <p class="kicker">Why This Collection Exists</p>
+          <h2>AI should not be a black box reserved for technologists.</h2>
+        </div>
+        <p class="intro">Artificial intelligence is quickly becoming part of how organizations remember, analyze, coordinate, invest, manage risk, and act. That makes AI literacy a business and civic capability—not a specialist luxury. These monographs translate the architecture of intelligent systems into plain language while preserving the seriousness of the underlying ideas.</p>
+      </div>
+
+      <div class="principles">
+        <article>
+          <span class="number">01</span>
+          <h3>Understand</h3>
+          <p>Move beyond prompts and chatbots to see the models, tools, memory, agents, controls, and people that make up a real AI system.</p>
+        </article>
+        <article>
+          <span class="number">02</span>
+          <h3>Connect</h3>
+          <p>Relate technology to familiar institutional questions: who knows, who decides, who may act, and who remains accountable.</p>
+        </article>
+        <article>
+          <span class="number">03</span>
+          <h3>Apply</h3>
+          <p>Explore concrete applications in finance, investment banking, audit, law, tax, research, capital allocation, and strategy.</p>
+        </article>
+        <article>
+          <span class="number">04</span>
+          <h3>Govern</h3>
+          <p>Learn why capability becomes valuable only when provenance, verification, security, authority, and reversibility grow with it.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="journey" id="journey">
+      <div class="page">
+        <div class="journey-head">
+          <div>
+            <p class="kicker">The Learning Journey · Five Movements</p>
+            <h2>From a useful model to an intelligent institution.</h2>
+          </div>
+          <p>The sequence is cumulative but not rigid. Begin with the architecture, watch its components work, understand how organizations create durable knowledge, confront the risks of autonomy and cooperation, and finally connect the system to investment and institutional deployment.</p>
+        </div>
+
+        <div class="stages">
+          <a class="stage" href="#movement-1">
+            <div class="stage-no">01</div>
+            <div class="stage-main"><span class="stage-label">See the whole</span><h3>Anatomy of Autonomous Intelligence</h3><p>Open the engine and identify the model, tools, memory, skills, orchestration, evidence, permissions, and human authority.</p></div>
+            <div class="stage-outcome"><strong>What the reader gains</strong><p>A clear mental model for understanding why the model is only one component of an intelligent system.</p></div>
+            <div class="arrow">↓</div>
+          </a>
+
+          <a class="stage" href="#movement-2">
+            <div class="stage-no">02</div>
+            <div class="stage-main"><span class="stage-label">Make it visible</span><h3>The Autonomous System Sandbox</h3><p>Follow nine guided laboratories that reveal how memory, agents, tools, workflows, and controls interact.</p></div>
+            <div class="stage-outcome"><strong>What the reader gains</strong><p>An intuitive understanding of autonomy through concrete cases in research, trading, tax, law, and investment banking.</p></div>
+            <div class="arrow">↓</div>
+          </a>
+
+          <a class="stage" href="#movement-3">
+            <div class="stage-no">03</div>
+            <div class="stage-main"><span class="stage-label">Remember responsibly</span><h3>Governed Institutional Intelligence</h3><p>See how institutional knowledge can become persistent, searchable, connected, and reusable without confusing machine output with institutional truth.</p></div>
+            <div class="stage-outcome"><strong>What the reader gains</strong><p>A practical distinction between information storage, organizational memory, governed knowledge, and accountable decision-making.</p></div>
+            <div class="arrow">↓</div>
+          </a>
+
+          <a class="stage" href="#movement-4">
+            <div class="stage-no">04</div>
+            <div class="stage-main"><span class="stage-label">Face agency</span><h3>Complex Intelligence and Institutional Response</h3><p>Understand what changes when AI perceives, reasons, acts, communicates, and cooperates through pathways that were not fully specified in advance.</p></div>
+            <div class="stage-outcome"><strong>What the reader gains</strong><p>A board-level view of autonomy, emergent cooperation, societal change, and the education required for responsible leadership.</p></div>
+            <div class="arrow">↓</div>
+          </a>
+
+          <a class="stage" href="#movement-5">
+            <div class="stage-no">05</div>
+            <div class="stage-main"><span class="stage-label">Deploy with purpose</span><h3>Investment, Harnessing, and Institutional Deployment</h3><p>Connect infrastructure, procurement, governance, cybersecurity, and finance into a coherent operating architecture.</p></div>
+            <div class="stage-outcome"><strong>What the reader gains</strong><p>A decision framework for buying, financing, constraining, securing, and scaling AI inside real organizations.</p></div>
+            <div class="arrow">↓</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section paths" id="start">
+      <div class="page">
+        <div class="split">
+          <div>
+            <p class="kicker">Choose Your Starting Point</p>
+            <h2>Enter through the question that matters to you.</h2>
+          </div>
+          <p class="intro">The full collection tells one story, but every reader arrives with a different concern. These short routes provide an immediate point of entry without requiring you to begin at paper one.</p>
+        </div>
+
+        <div class="path-grid">
+          <article class="path">
+            <span class="tag">For the curious professional</span>
+            <h3>What is an AI system, really?</h3>
+            <p>Begin with the overall architecture, then learn why AI is much larger than the chatbot or language model visible on the screen.</p>
+            <a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/01_capstone_anatomy_of_autonomous_intelligence.pdf" target="_blank" rel="noopener">Start with Paper 01 ↗</a>
+          </article>
+
+          <article class="path dark">
+            <span class="tag">For the CEO or board member</span>
+            <h3>What should we buy—and how should we govern it?</h3>
+            <p>Understand what vendors call “AI,” how cost and lock-in arise, what evidence to demand, and why the business capability—not the token—is the right unit of analysis.</p>
+            <a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/39_How_to_Buy_AI_CEO_Guide_Checklist.pdf" target="_blank" rel="noopener">Start with Paper 39 ↗</a>
+          </article>
+
+          <article class="path dark">
+            <span class="tag">For the educator or student</span>
+            <h3>What must professionals learn in the age of AI?</h3>
+            <p>Use a capability-based curriculum that progresses from intelligent-tool user to practitioner, architect, and responsible governor.</p>
+            <a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/36_the%20AI%20curriculum.pdf" target="_blank" rel="noopener">Start with Paper 36 ↗</a>
+          </article>
+
+          <article class="path">
+            <span class="tag">For risk, governance, and policy</span>
+            <h3>What changes when AI begins to act?</h3>
+            <p>Move from model governance to the governance of systems that use tools, sustain objectives, coordinate with other agents, and create new cyber pathways.</p>
+            <a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/32_keynote%20speech_we%20are%20not%20building%20tools%20anymore.pdf" target="_blank" rel="noopener">Start with Paper 32 ↗</a>
+          </article>
+
+          <article class="path featured">
+            <div>
+              <span class="tag">For the financial professional</span>
+              <p>Models · Agents · Knowledge · Risk · Institutional advantage</p>
+            </div>
+            <div>
+              <h3>What would an autonomous financial institution look like?</h3>
+              <p>Use a real production-scale agentic architecture as the bridge to the next stage of finance: systems that retrieve institutional knowledge, invoke tools, coordinate specialized work, monitor outcomes, improve procedures, and remain bounded by human authority.</p>
+              <a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/41_uber_autonomous_financial_institution_reference_style.pdf" target="_blank" rel="noopener">Start with Paper 41 ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gateway">
+      <div class="page gateway-grid">
+        <div>
+          <p class="kicker" style="color:white">The Central Idea</p>
+          <h2>The model is not the system.</h2>
+        </div>
+        <div>
+          <blockquote>An AI becomes institutionally consequential when it is connected to knowledge, tools, memory, objectives, permissions, other agents, and the external world. Understanding those connections is the beginning of both value and governance.</blockquote>
+          <div class="gateway-list">
+            <div class="gateway-item"><strong>Models provide capability</strong><span>They interpret, generate, predict, classify, reason, or recognize patterns.</span></div>
+            <div class="gateway-item"><strong>Architecture provides function</strong><span>Tools, workflows, memory, and orchestration turn capability into useful work.</span></div>
+            <div class="gateway-item"><strong>Institutions provide purpose</strong><span>Knowledge, roles, mandates, and incentives determine what the system is trying to accomplish.</span></div>
+            <div class="gateway-item"><strong>Governance provides legitimacy</strong><span>Evidence, permissions, accountability, monitoring, and reversibility determine what the system may do.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="library" id="library">
+      <div class="page">
+        <div class="split">
+          <div>
+            <p class="kicker">The Complete Public Library</p>
+            <h2>Forty-one ways to see AI more clearly.</h2>
+          </div>
+          <p class="intro">Every monograph is designed to stand on its own while contributing to the larger architecture. The descriptions below emphasize the question each paper helps a non-specialist reader answer.</p>
+        </div>
+
+        <section class="movement" id="movement-1" aria-labelledby="movement-1-title">
+          <div class="movement-head">
+            <span>Movement I · 01–14</span>
+            <div>
+              <h3 id="movement-1-title">Anatomy of Autonomous Intelligence</h3>
+              <p>Open the engine. These papers explain how models, agents, skills, tools, memory, interfaces, controls, and human authority fit together—and why useful autonomy is an architectural achievement rather than a property of the model alone.</p>
+            </div>
+          </div>
+          <div class="paper-grid">
+            <article class="paper-card"><span class="paper-no">01</span><span class="paper-kind">Collection capstone</span><h4>Anatomy of Autonomous Intelligence</h4><p>The clearest entry point: a complete map from language models and tools to governed agency, knowledge, and financial applications.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/01_capstone_anatomy_of_autonomous_intelligence.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">02</span><span class="paper-kind">Governance foundations</span><h4>From Intelligence to Governance</h4><p>Explains how constraints, validation, oversight, and stopping rules shape an AI system before formal regulation even begins.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/02_from_intelligence_to_governance.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">03</span><span class="paper-kind">Human augmentation</span><h4>The ExoBrain</h4><p>Shows how AI expands from conversation into construction, execution, memory, and an external extension of human cognition.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/03_the_exobrain.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">04</span><span class="paper-kind">Capability progression</span><h4>From Prediction to Reasoning to Agency with Holmes</h4><p>A Sherlock Holmes journey that makes the difference between generating language, organizing thought, and taking action intuitive.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/04_prediction_reasoning_agency_holmes.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">05</span><span class="paper-kind">System architecture</span><h4>The Infrastructure of Autonomous Intelligence</h4><p>Introduces the agentic loop and locates tools, memory, orchestration, permissions, evidence, and stopping conditions around it.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/05_infrastructure_of_autonomous_intelligence.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">06</span><span class="paper-kind">Connected capabilities</span><h4>The Role of MCP in Autonomous Systems</h4><p>Uses the metaphor of two digital cities to explain how agents, expertise, tools, connections, external systems, and governance coordinate.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/06_role_of_mcp_in_autonomous_systems.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">07</span><span class="paper-kind">Enterprise systems</span><h4>Disassembling the Autonomous Enterprise Engine</h4><p>Asks when a powerful agentic platform becomes a genuine institutional operating system—and where accountability gaps remain.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/07_disassembling_autonomous_enterprise_engine.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">08</span><span class="paper-kind">Platform case</span><h4>The Case of Cowork</h4><p>Applies the collection’s architecture to a real platform, distinguishing a useful cognitive runtime from a fully governed institution.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/08_case_of_cowork.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">09</span><span class="paper-kind">Knowledge practice</span><h4>Building an Obsidian Vault</h4><p>A practical path from scattered research files to a connected, portable, and governable environment for reflection.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/09_building_an_obsidian_vault.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">10</span><span class="paper-kind">Research memory</span><h4>The Vault-RAG for Academic Research</h4><p>Shows how a passive archive becomes an active research partner that retrieves relevant evidence and grounds new writing.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/10_vault_rag_for_academic_research.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">11</span><span class="paper-kind">Investment banking</span><h4>The Living Vault</h4><p>Develops a maturity ladder from one-time analysis to a governed investment-banking system that learns without confusing memory with authority.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/11_the_living_vault.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">12</span><span class="paper-kind">Research governance</span><h4>The Governed Research Loop</h4><p>A financial experiment in which the most important result is a responsible refusal to deploy a model that fails its decisive test.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/12_governed_research_loop.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">13</span><span class="paper-kind">Applied finance</span><h4>Antigravity and Algorithmic Trading</h4><p>Shows how a brief investment objective can become an inspectable trading application through structured human–AI collaboration.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/13_antigravity_algorithmic_trading.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">14</span><span class="paper-kind">Applied tax</span><h4>Antigravity and Tax Planning</h4><p>Uses a synthetic multinational case to make tax assumptions, trade-offs, constraints, and risks visible inside an AI-assisted system.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/14_antigravity_tax_planning.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+          </div>
+        </section>
+
+        <section class="movement" id="movement-2" aria-labelledby="movement-2-title">
+          <div class="movement-head">
+            <span>Movement II · 15–24</span>
+            <div>
+              <h3 id="movement-2-title">The Autonomous System Sandbox</h3>
+              <p>See the ideas operate. This nine-laboratory sequence moves from the smallest second-brain circuit to bounded autonomous institutions in research, trading, tax, law, reporting, and investment banking. Each new capability arrives with a corresponding control.</p>
+            </div>
+          </div>
+          <div class="paper-grid">
+            <article class="paper-card"><span class="paper-no">15</span><span class="paper-kind">Laboratory map</span><h4>The Autonomous System Sandbox</h4><p>The guide to the complete experimental journey: expose the parts, understand their interaction, govern their transitions, then recombine them.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/15_autonomous_system_sandbox.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">16</span><span class="paper-kind">Lab 1 · Memory</span><h4>Foundations of the Second-Brain Paradigm</h4><p>Builds the simplest visible circuit of memory, retrieval, transformation, write-back, connection, and verification.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/16_lab01_second_brain_foundations.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">17</span><span class="paper-kind">Lab 2 · Architecture</span><h4>The Master Carpenter</h4><p>A workshop metaphor that separates judgment, expertise, capability, connectivity, and authority across agents, skills, tools, interfaces, and governance.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/17_lab02_master_carpenter.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">18</span><span class="paper-kind">Lab 3 · Knowledge</span><h4>The Obsidian Constructor</h4><p>Turns a research estate into linked, searchable knowledge and reveals where provenance, contradiction handling, and governed write-back must enter.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/18_lab03_obsidian_constructor.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">19</span><span class="paper-kind">Lab 4 · Trading</span><h4>Algorithmic Trading with Antigravity</h4><p>Reconstructs how an investment application evolved through planning, implementation, inspection, refactoring, and testing.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/19_lab04_algorithmic_trading_antigravity.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">20</span><span class="paper-kind">Lab 5 · Agency</span><h4>From Intelligence to Agency: Sherlock AI</h4><p>Makes prediction, reasoning, tool use, memory, permissions, and governed action observable through a memorable mystery.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/20_lab05_sherlock_ai.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">21</span><span class="paper-kind">Lab 6 · Reporting</span><h4>From Prompt to Governed Agency: The Financial Reporter</h4><p>Shows why a connected financial workflow becomes agentic only when orchestration, memory, validation, authorization, and oversight are added.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/21_lab06_financial_reporter.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">22</span><span class="paper-kind">Lab 7 · Tax</span><h4>The Tax-Planning ExoBrain</h4><p>Builds a governed tax-intelligence system that preserves the lineage of rules, recommendations, scenarios, and constraints.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/22_lab07_tax_planning_exobrain.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">23</span><span class="paper-kind">Lab 8 · Law</span><h4>The Civil-Law ExoBrain</h4><p>Separates documents, claims, evidence, contradictions, recommendations, permission, and human authorization in legal analysis.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/23_lab08_civil_law_exobrain.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">24</span><span class="paper-kind">Lab 9 · Investment banking</span><h4>The Investment-Bank ExoBrain</h4><p>Reimagines an investment bank as an operating system of institutional memory, analytical loops, diligence, communication, governance, and transaction design.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/24_lab09_investment_bank_exobrain.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+          </div>
+        </section>
+
+        <section class="movement" id="movement-3" aria-labelledby="movement-3-title">
+          <div class="movement-head">
+            <span>Movement III · 25–31</span>
+            <div>
+              <h3 id="movement-3-title">Governed Institutional Intelligence</h3>
+              <p>Change the unit of analysis from the task to the institution. These papers ask how organizations preserve, activate, question, navigate, update, and govern knowledge over time—and how computational memory may transform professional services.</p>
+            </div>
+          </div>
+          <div class="paper-grid">
+            <article class="paper-card"><span class="paper-no">25</span><span class="paper-kind">Institutional synthesis</span><h4>AI-Enhanced Institutional Knowledge</h4><p>Presents the four-part architecture of human intelligence, human institutional knowledge, generative AI, and governed machine-enhanced knowledge.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/25_ai_enhanced_institutional_knowledge.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">26</span><span class="paper-kind">Knowledge governance</span><h4>Governance Before Cognition</h4><p>Builds the constitutional foundation of the Governed ExoBrain by separating evidence, interpretation, recommendation, decision, authority, and execution.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/26_governance_before_cognition.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">27</span><span class="paper-kind">Inquiry and memory</span><h4>Question-Induced Knowledge Architecture</h4><p>Shows how the questions an institution asks can create structured, reusable experience even when the underlying model does not change.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/27_question_induced_knowledge_architecture.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">28</span><span class="paper-kind">Knowledge navigation</span><h4>Navigation-Conditioned Knowledge Evolution</h4><p>Explains why different paths through the same knowledge can produce different answers—and different future institutional memories.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/28_navigation_conditioned_knowledge_evolution.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">29</span><span class="paper-kind">Experimental frontier</span><h4>The Quantum Brain</h4><p>Asks, without hype, whether quantum-inspired methods can improve the selection of evidence paths against strong conventional alternatives.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/29_quantum_brain.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">30</span><span class="paper-kind">Visual briefing</span><h4>AI-Enhanced Institutional Knowledge</h4><p>A visual explanation of why generating an answer is easy while building durable, traceable, and governable institutional memory is hard.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/30_institutional_intelligence_visual_briefing.pdf" target="_blank" rel="noopener">View the briefing ↗</a></article>
+            <article class="paper-card"><span class="paper-no">31</span><span class="paper-kind">Professional services</span><h4>Beyond the Big Four</h4><p>Explores how computational institutional knowledge may reshape audit, consulting, competition, client capabilities, and public assurance infrastructure.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/31_beyond%20the%20big%20four%20in%20the%20age%20of%20ai.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+          </div>
+        </section>
+
+        <section class="movement" id="movement-4" aria-labelledby="movement-4-title">
+          <div class="movement-head">
+            <span>Movement IV · 32–36</span>
+            <div>
+              <h3 id="movement-4-title">Agency, Complex Intelligence, and Institutional Response</h3>
+              <p>When AI can act, communicate, and cooperate, isolated-output governance is no longer enough. This movement connects board responsibility, game theory, the broader AI toolbox, societal adaptation, and the education needed to lead intelligent institutions.</p>
+            </div>
+          </div>
+          <div class="paper-grid">
+            <article class="paper-card"><span class="paper-no">32</span><span class="paper-kind">Board perspective</span><h4>We Are Not Building Tools Anymore</h4><p>A keynote on the transition from artificial intelligence to artificial agency—and the institutions now required to govern it.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/32_keynote%20speech_we%20are%20not%20building%20tools%20anymore.pdf" target="_blank" rel="noopener">Read the perspective ↗</a></article>
+            <article class="paper-card"><span class="paper-no">33</span><span class="paper-kind">Emergent cooperation</span><h4>When AI Agents Cooperate Unexpectedly</h4><p>A disciplined framework for understanding unexpected coordination and deciding when causes matter for containment, remediation, or redeployment.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/33_when%20agents%20COOPERATE%20unexpectedly.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">34</span><span class="paper-kind">AI beyond language models</span><h4>Modeling Artificial Intelligence Beyond the LLM</h4><p>Uses the self-driving car to explain how perception, judgment, optimization, control, learning, and action cooperate in a complete intelligent system.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/34_DRIVE%20GPT_autonomous%20cars%20teach%20us%20about%20the%20architecture%20of%20intelligent%20systems.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">35</span><span class="paper-kind">Society and institutions</span><h4>Reading Bill Gates Through the Architecture of Autonomous AI</h4><p>Connects a societal warning about AI to governance, autonomy, institutional knowledge, cybersecurity, and emergent collaboration inside organizations.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/35_AI%20must%20come%20with%20societal%20and%20institutional%20change.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">36</span><span class="paper-kind">Public curriculum</span><h4>Beyond the Prompt</h4><p>Explains what professionals must learn to progress from using AI to building, governing, controlling, and taking responsibility for intelligent systems.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/36_the%20AI%20curriculum.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+          </div>
+        </section>
+
+        <section class="movement" id="movement-5" aria-labelledby="movement-5-title">
+          <div class="movement-head">
+            <span>Movement V · 37–41</span>
+            <div>
+              <h3 id="movement-5-title">Investment, Harnessing, and Institutional Deployment</h3>
+              <p>Turn understanding into institutional action. These papers follow AI from the data center and balance sheet to procurement, controls, cybersecurity, and the architecture of a self-improving—but still human-accountable—financial institution.</p>
+            </div>
+          </div>
+          <div class="paper-grid">
+            <article class="paper-card"><span class="paper-no">37</span><span class="paper-kind">Infrastructure and capital</span><h4>The Anatomy of the Hyperscale AI Capital Expenditure Supercycle</h4><p>Explains why technology companies are investing hundreds of billions in compute, data centers, power, and specialized infrastructure—and what investors should examine.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/37_the%20investment%20SUPER%20cycle.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">38</span><span class="paper-kind">Unifying governance</span><h4>Harnessing Intelligence</h4><p>Provides the architecture that keeps increasingly capable AI identifiable, observable, attributable, bounded, interruptible, and accountable.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/38_understanding%20harnessing.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+            <article class="paper-card"><span class="paper-no">39</span><span class="paper-kind">CEO and board guide</span><h4>How to Buy AI</h4><p>A non-technical guide to AI products, pricing, total cost, buy-versus-build choices, investment approval, business outcomes, and board oversight.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/39_How_to_Buy_AI_CEO_Guide_Checklist.pdf" target="_blank" rel="noopener">Read the guide ↗</a></article>
+            <article class="paper-card"><span class="paper-no">40</span><span class="paper-kind">Cybersecurity case</span><h4>Anatomy of an Autonomous Breach</h4><p>A pedagogical postmortem showing how small control failures and individually available capabilities can combine into a machine-speed, multi-agent attack path.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/40_OpenAI_HuggingFace_Incident_Master_Report.pdf" target="_blank" rel="noopener">Read the report ↗</a></article>
+            <article class="paper-card"><span class="paper-no">41</span><span class="paper-kind">Financial-system capstone</span><h4>From Software Factory to Autonomous Financial Institution</h4><p>Uses Uber’s production-scale agentic architecture to explain the next stage of finance: connected models, agents, knowledge, tools, controls, self-improvement, and cooperation.</p><a href="https://github.com/alexdibol/ai_monographs/blob/main/papers/41_uber_autonomous_financial_institution_reference_style.pdf" target="_blank" rel="noopener">Read the monograph ↗</a></article>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="section author" id="about">
+      <div class="page author-grid">
+        <div class="author-mark" aria-hidden="true"><span>AR</span></div>
+        <div>
+          <p class="kicker">Academic and Professional Direction</p>
+          <h2>Alejandro Reynoso</h2>
+          <p>Honorary Fellow and External Lecturer at Cambridge Judge Business School; Independent Board Member at BIVA; Founder and Chief Scientist of DEFI Capital Research; financial-markets practitioner, researcher, and educator.</p>
+          <p>The collection brings together artificial intelligence, financial markets, institutional knowledge, autonomous systems, cybersecurity, governance, and professional responsibility. Its public purpose is deliberately pedagogical: to make sophisticated ideas accessible without making them superficial.</p>
+          <p class="disclosure"><strong>Independent educational work.</strong> The materials are intended for research, teaching, and public discussion. They do not constitute investment, legal, tax, cybersecurity, regulatory, or operational advice. Examples and prototypes should not be interpreted as evidence of production readiness. The author retains responsibility for the collection’s conceptual direction, interpretation, and publication.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="page footer-grid">
+      <div><strong>AI Monographs</strong><br>Artificial intelligence, made understandable · © 2026 Alejandro Reynoso</div>
+      <div><a href="https://github.com/alexdibol/ai_monographs" target="_blank" rel="noopener">GitHub ↗</a><a href="https://alexdibol.github.io" target="_blank" rel="noopener">Research projects ↗</a><a href="#top">Back to top ↑</a></div>
+    </div>
+  </footer>
+</body>
+</html>
